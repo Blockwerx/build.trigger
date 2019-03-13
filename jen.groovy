@@ -1,7 +1,7 @@
 
 import hudson.model.Node;
 import hudson.model.Slave;
-import hudson.model.Jenkins;
+import jenkins.model.Jenkins;
 
 Jenkins jenkins = Jenkins.instance;
 def nodes = jenkins.nodes;

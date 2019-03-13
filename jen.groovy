@@ -6,6 +6,9 @@ import jenkins.model.Jenkins;
 Jenkins jenkins = Jenkins.instance;
 def nodes = jenkins.nodes;
 
-for (Node node in nodes) {
-    println "node found";
+print "\n Hello there";
+def requiredNodes = ['Slave1', 'Slave2', 'Slave3'];
+requiredNodes.each{
+        println it;
 }
+

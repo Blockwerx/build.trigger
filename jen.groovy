@@ -1,11 +1,14 @@
 
 import jenkins.model.Jenkins;
+import hudson.model.*;
 
-Jenkins jenkins = Jenkins.instance;
+def build  = Thread.currentThread().executable();
+def jenkins = Jenkins.instance;
 jenkins.getComputer().get_all().each{ 
  if(it.getNumExecutors() - 1 ==  it.countIdle()){
         //execution bash script to do clean up
-        printOut("ls -ls".execute());
+        println build.workspace.toString();
+         printOut("ls -ls".execute());
     } else{
         println "Some executors are engaged, try again later"
     }

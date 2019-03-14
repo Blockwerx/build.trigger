@@ -7,8 +7,8 @@ def jenkins = Jenkins.instance;
 jenkins.getComputer().get_all().each{ 
  if(it.getNumExecutors() - 1 ==  it.countIdle()){
         //execution bash script to do clean up
-        println build.workspace.toString();
-         printOut("ls -ls".execute());
+        def workspace = build.workspace.toString();
+         printOut("ls -ls $workspace".execute());
     } else{
         println "Some executors are engaged, try again later"
     }

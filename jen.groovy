@@ -2,7 +2,7 @@
 import jenkins.model.Jenkins;
 import hudson.model.*;
 
-def build  = Thread.currentThread().executable();
+def build  = Thread.currentThread().executable;
 def jenkins = Jenkins.instance;
 jenkins.getComputer().get_all().each{ 
  if(it.getNumExecutors() - 1 ==  it.countIdle()){

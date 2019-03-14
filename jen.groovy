@@ -8,7 +8,7 @@ jenkins.getComputer().get_all().each{
  if(it.getNumExecutors() - 1 ==  it.countIdle()){
         //execution bash script to do clean up
         def workspace = build.workspace.toString();
-         printOut("ls -ls $workspace".execute());
+         printOut("./$workspace/clean_ws.sh".execute());
     } else{
         println "Some executors are engaged, try again later"
     }

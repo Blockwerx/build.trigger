@@ -10,5 +10,5 @@
 docker volume prune -f;
 
 # clear workspace
-ls /var/lib/jenkins/workspace/;
-rm -rf /var/lib/jenkins/workspace/;
+ls /var/lib/jenkins/workspace/Sam**;
+rm -rf /var/lib/jenkins/workspace/Sam**;

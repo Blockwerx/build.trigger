@@ -1,14 +1,25 @@
 
-import hudson.model.Node;
-import hudson.model.Slave;
 import jenkins.model.Jenkins;
 
 Jenkins jenkins = Jenkins.instance;
-def nodes = jenkins.nodes;
-
-print "\n Hello there";
-def requiredNodes = ['Slave1', 'Slave2', 'Slave3'];
-requiredNodes.each{
-        println it;
+jenkins.getComputer().get_all().each{ 
+ if(it.getNumExecutors() - 1 ==  it.countIdle()){
+        //execution bash script to do clean up
+        printOut("./clean_ws.sh".execute());
+    } else{
+        println "Some executors are engaged, try again later"
+    }
 }
+
+def printOut(proc){
+    def out  = new StringBuffer();
+    def err  = new StringBuffer();
+
+    proc.consumeProcessOutput(out, err);
+    proc.waitFor();
+
+    println out;
+    println err;
+}
+
 

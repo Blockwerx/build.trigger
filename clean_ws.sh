@@ -12,5 +12,5 @@ docker images -f dangling=true -aq
 docker volume prune -f;
 
 # clear workspace
-ls /var/lib/jenkins/workspace/BuildSam** /var/lib/jenkins/workspace/**feature/**; 
-rm -rf /var/lib/jenkins/workspace/BuildSam** /var/lib/jenkins/workspace/**feature/**;
+ls /var/lib/jenkins/workspace/BuildSam** /var/lib/jenkins/workspace/**feature**; 
+rm -rf /var/lib/jenkins/workspace/BuildSam** /var/lib/jenkins/workspace/**feature**;
